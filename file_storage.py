@@ -32,5 +32,7 @@ class file_storage:
             pass
     
     def new(self, object):
+        """
+        """
         key = object.__class__.__name__ + "." + object.id
         file_storage.__obj[key] = object

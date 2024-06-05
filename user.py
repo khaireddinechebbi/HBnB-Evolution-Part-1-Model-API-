@@ -7,6 +7,8 @@ class User(base_model):
     """
     """
     def __init__(self, email, password, first_name, last_name):
+        """
+        """
         super().__init__()
         self.email = email
         self.password = password
