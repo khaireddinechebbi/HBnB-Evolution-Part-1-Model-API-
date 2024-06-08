@@ -1,7 +1,7 @@
-#!/user/bin/python3
+#!/usr/bin/python3
 """
 """
-base_model = __import__('base_model').base_model
+from models.base_model import base_model
 
 class User(base_model):
     """

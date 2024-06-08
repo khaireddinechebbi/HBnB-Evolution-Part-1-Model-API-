@@ -1,13 +1,13 @@
-#!/user/bin/python3
+#!/usr/bin/python3
 """
 """
 base_model = __import__('base_model').base_model
 
-class amenity(base_model):
+class City(base_model):
     """
     """
-    def __init__(self, name):
+    def __init__(self, name, country):
         """
         """
-        super.__init__()
         self.name = name
+        self.country = country

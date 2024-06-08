@@ -1,7 +1,7 @@
-#!/user/bin/python3
+#!/usr/bin/python3
 """
 """
-class country:
+class Country:
     """
     """
     def __init__(self, name):

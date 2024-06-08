@@ -1,10 +1,10 @@
-#!/user/bin/python3
+#!/usr/bin/python3
 """
 """
 base_model = __import__('base_model').base_model
-user = __import__('user').user
+from models.user import User
 
-class place(base_model):
+class Place(base_model):
     """
     """
     def __init__(self, name, description, address, city, latitude, longitude, host, number_of_rooms, number_of_bathrooms, max_guests, price_per_night):

@@ -1,9 +1,9 @@
-#!/user/bin/python3
+#!/usr/bin/python3
 """
 """
 base_model = __import__('base_model').base_model
 
-class review(base_model):
+class Review(base_model):
     """
     """
     def __init__(self, user, place, text, rating):
