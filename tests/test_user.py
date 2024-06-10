@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 """
 """
-import unittest
+import unittest, os, sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from models.user import User
 
 class Test(unittest.TestCase):

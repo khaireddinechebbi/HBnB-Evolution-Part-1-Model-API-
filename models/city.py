@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 """
-base_model = __import__('base_model').base_model
+from models.base_model import base_model
 
 class City(base_model):
     """
@@ -9,5 +9,6 @@ class City(base_model):
     def __init__(self, name, country):
         """
         """
+        super().__init__()
         self.name = name
         self.country = country
