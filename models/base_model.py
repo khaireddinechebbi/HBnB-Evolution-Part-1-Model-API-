@@ -4,7 +4,7 @@
 import uuid
 from datetime import datetime
 
-class base_model:
+class baseModel:
     """
     """
     def __init__(self):
@@ -13,6 +13,9 @@ class base_model:
         self.id = str(uuid.uuid4())
         self.create_at = datetime.now()
         self.update_at = datetime.now()
+
+    def __repr__(self):
+        return self.__str__()
     
     def save(self):
         """

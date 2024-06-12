@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """
 """
-from models.base_model import base_model
+from models.base_model import baseModel
 
-class Amenity(base_model):
+class Amenity(baseModel):
     """
     """
     def __init__(self, name):

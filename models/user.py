@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """
 """
-from models.base_model import base_model
+from models.base_model import baseModel
 
-class User(base_model):
+class User(baseModel):
     """
     """
     def __init__(self, email, password, first_name, last_name):

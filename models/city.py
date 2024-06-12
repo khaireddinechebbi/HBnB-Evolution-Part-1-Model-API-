@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """
 """
-from models.base_model import base_model
+from models.base_model import baseModel
 
-class City(base_model):
+class City(baseModel):
     """
     """
     def __init__(self, name, country):
