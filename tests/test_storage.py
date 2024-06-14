@@ -8,7 +8,7 @@ from datetime import datetime
 
 import pep8
 import models
-from file_storage import *
+from fileStorage.storage import *
 from models.base_model import baseModel
 from models.user import User
 from models.country import Country
