@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-# Persistence for users
-
-from model.user import User
+"""Persistence for users"""
+import os, sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from models.user import User
 from persistence.ipersistence_manager import IPersistenceManager
 
 

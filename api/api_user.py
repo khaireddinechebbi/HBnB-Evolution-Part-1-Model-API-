@@ -1,11 +1,14 @@
 #!/usr/bin/python3
 # API for managing users
 
-from flask import request
-from flask_restx import Namespace, Resource, fields
+from flask import request, Flask
+from flask_restx import Namespace, Resource, fields, Api
 from data_manager import DataManager
 import uuid
 from datetime import datetime
+
+app = Flask(__name__)
+api = Api(app)
 
 ns = Namespace('users', description='Operations related to users')
 data_manager = DataManager()

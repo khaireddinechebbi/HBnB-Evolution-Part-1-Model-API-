@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-# Persistence for reviews
-
-from model.review import Review
+"""Persistence for reviews"""
+import os, sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from models.review import Review
 from persistence.ipersistence_manager import IPersistenceManager
 
 

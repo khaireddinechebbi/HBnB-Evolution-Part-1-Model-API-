@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """Persistence for places"""
-
-from model.place import Place
+import os, sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from models.place import Place
 from persistence.ipersistence_manager import IPersistenceManager
 
 
