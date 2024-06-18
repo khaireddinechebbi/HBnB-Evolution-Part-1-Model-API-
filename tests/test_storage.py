@@ -6,8 +6,6 @@ import unittest
 from datetime import datetime
 
 
-import pep8
-import models
 from fileStorage.storage import *
 from models.base_model import baseModel
 from models.user import User
