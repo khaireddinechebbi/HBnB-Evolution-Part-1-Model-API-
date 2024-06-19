@@ -1,13 +1,17 @@
 #!/usr/bin/python3
-# NS for managing places
+"""NS for managing places"""
 
-from flask import request
-from flask_restx import Namespace, Resource, fields
+from flask import request, Flask
+from flask_restx import Namespace, Resource, fields, Api
 from data_manager import DataManager
 import uuid
 from datetime import datetime
 
+app = Flask(__name__)
+api = Api(app)
+
 ns = Namespace('places', description='Operations related to places')
+api.add_namespace(ns)
 data_manager = DataManager()
 
 # Model definition for a Place
@@ -122,3 +126,6 @@ class PlaceResource(Resource):
             return '', 204
         else:
             ns.abort(404, "Place not found")
+    
+    if __name__ == '__main__':
+        app.run(debug=True)
