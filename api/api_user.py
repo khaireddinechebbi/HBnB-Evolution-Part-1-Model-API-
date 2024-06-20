@@ -1,16 +1,22 @@
 #!/usr/bin/python3
 # API for managing users
 
-from flask import request, Flask
-from flask_restx import Namespace, Resource, fields, Api
-from data_manager import DataManager
-import uuid
 from datetime import datetime
+import uuid
+from data_manager import DataManager
+from flask_restx import Namespace, Resource, fields, Api
+from flask import request, Flask
+import os
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 
 app = Flask(__name__)
 api = Api(app)
 
 ns = Namespace('users', description='Operations related to users')
+api.add_namespace(ns)
+
 data_manager = DataManager()
 
 # Model definition for a User
@@ -99,3 +105,6 @@ class UserResource(Resource):
             return '', 204
         else:
             ns.abort(404, "User not found")
+
+    if __name__ == '__main__':
+        app.run(debug=True)

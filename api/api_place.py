@@ -1,11 +1,15 @@
 #!/usr/bin/python3
 """NS for managing places"""
 
-from flask import request, Flask
-from flask_restx import Namespace, Resource, fields, Api
-from data_manager import DataManager
-import uuid
 from datetime import datetime
+import uuid
+from data_manager import DataManager
+from flask_restx import Namespace, Resource, fields, Api
+from flask import request, Flask
+import os
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 
 app = Flask(__name__)
 api = Api(app)
@@ -126,6 +130,6 @@ class PlaceResource(Resource):
             return '', 204
         else:
             ns.abort(404, "Place not found")
-    
+
     if __name__ == '__main__':
         app.run(debug=True)

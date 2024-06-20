@@ -1,16 +1,22 @@
 #!/usr/bin/python3
 # API for managing countries
 
-from flask import request, Flask
-from flask_restx import Namespace, Resource, fields, Api
-from data_manager import DataManager
-import uuid
 from datetime import datetime
+import uuid
+from data_manager import DataManager
+from flask_restx import Namespace, Resource, fields, Api
+from flask import request, Flask
+import os
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 
 app = Flask(__name__)
 api = Api(app)
 
 ns = Namespace('countries', description='Operations related to countries')
+api.add_namespace(ns)
+
 data_manager = DataManager()
 
 # Model definition for a Country
@@ -91,3 +97,6 @@ class CountryResource(Resource):
             return '', 204
         else:
             ns.abort(404, "Country not found")
+
+    if __name__ == '__main__':
+        app.run(debug=True)

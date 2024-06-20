@@ -1,16 +1,22 @@
 #!/usr/bin/python3
 # API for managing reviews
 
-from flask import request, Flask
-from flask_restx import Namespace, Resource, fields, Api
-from data_manager import DataManager
-import uuid
 from datetime import datetime
+import uuid
+from data_manager import DataManager
+from flask_restx import Namespace, Resource, fields, Api
+from flask import request, Flask
+import os
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 
 app = Flask(__name__)
 api = Api(app)
 
 ns = Namespace('reviews', description='Operations related to reviews')
+api.add_namespace(ns)
+
 data_manager = DataManager()
 
 # Model definition for a Review
@@ -52,7 +58,7 @@ class Reviews(Resource):
         """Fetch all reviews."""
         return data_manager.get_all_reviews()
 
-    @ns.expect(review_model)
+    @ns.expect(review_model, validate=True)
     @ns.response(201, 'Review created successfully')
     @ns.response(400, 'Invalid request')
     def post(self):
@@ -89,7 +95,7 @@ class ReviewResource(Resource):
         else:
             ns.abort(404, "Review not found")
 
-    @ns.expect(review_model)
+    @ns.expect(review_model, validate=True)
     @ns.response(204, 'Review updated successfully')
     @ns.response(400, 'Invalid request')
     @ns.response(404, 'Review not found')
@@ -102,3 +108,7 @@ class ReviewResource(Resource):
             return '', 204
         else:
             ns.abort(404, "Review not found")
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
