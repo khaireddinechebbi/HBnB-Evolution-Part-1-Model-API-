@@ -6,7 +6,7 @@ import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 import unittest
 from datetime import datetime
-from fileStorage.storage import *
+from fileStorage.storage import FileStorage
 from models.base_model import baseModel
 from models.user import User
 from models.country import Country
@@ -32,7 +32,7 @@ class TestFileStorage(unittest.TestCase):
 
     def tearDown(self):
         """TearDown for each method in TestFileStorage class"""
-        FileStorage.delete_obj(self)
+        FileStorage.delete_all(self)
         if os.path.exists('file.json'):
             os.remove('file.json')
 
@@ -42,7 +42,7 @@ class TestFileStorage(unittest.TestCase):
         FileStorage.save(self)
         self.assertEqual(os.path.exists('file.json'), False)
 
-        FileStorage.delete_obj(self)
+        FileStorage.delete_all(self)
         FileStorage.load(self)
 
     def test_errs(self):
