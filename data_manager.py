@@ -7,12 +7,12 @@ from persistence.country_repository import CountryRepository
 from persistence.place_repository import PlaceRepository
 from persistence.review_repository import ReviewRepository
 from persistence.user_repository import UserRepository
-from models.amenity import Amenity
-from models.city import City
-from models.country import Country
-from models.place import Place
-from models.review import Review
-from models.user import User
+from model.amenity import Amenity
+from model.city import City
+from model.country import Country
+from model.place import Place
+from model.review import Review
+from model.user import User
 
 class DataManager:
     """Class to manage CRUD operations for various entities."""
