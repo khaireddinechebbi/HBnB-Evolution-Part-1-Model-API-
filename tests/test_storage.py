@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 """Module Test Case for FileStorage"""
-import unittest, os, sys
+import unittest
+import os
+import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 import unittest
 from datetime import datetime
-
-
 from fileStorage.storage import *
 from models.base_model import baseModel
 from models.user import User
@@ -32,34 +32,33 @@ class TestFileStorage(unittest.TestCase):
 
     def tearDown(self):
         """TearDown for each method in TestFileStorage class"""
-        file_storage.delete_obj(self)
+        FileStorage.delete_obj(self)
         if os.path.exists('file.json'):
             os.remove('file.json')
-
-
 
     def test_fs_instance(self):
         """FileStorage class save checks, reload checks"""
         b1 = baseModel()
-        file_storage.save(self)
+        FileStorage.save(self)
         self.assertEqual(os.path.exists('file.json'), False)
 
-        file_storage.delete_obj(self)
-        file_storage.load(self)
+        FileStorage.delete_obj(self)
+        FileStorage.load(self)
 
     def test_errs(self):
         """Test most mal usage of FileStorage methods"""
         b1 = baseModel()
         with self.assertRaises(AttributeError):
-            file_storage.__objects
-            file_storage.__File_path
+            FileStorage.__objects
+            FileStorage.__File_path
 
         with self.assertRaises(TypeError):
-            file_storage.new()
-            file_storage.new(self, b1)
-            file_storage.save(b1)
-            file_storage.load(b1)
-            file_storage.all(b1)
+            FileStorage.new()
+            FileStorage.new(self, b1)
+            FileStorage.save(b1)
+            FileStorage.load(b1)
+            FileStorage.all(b1)
+
 
 if __name__ == '__main__':
     unittest.main()

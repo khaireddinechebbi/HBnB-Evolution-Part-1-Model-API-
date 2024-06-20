@@ -1,11 +1,19 @@
-#!/user/bin/python3
+#!/usr/bin/python3
 """
+Module for file storage system
 """
+
 import json
 
 
-class file_storage:
+class FileStorage:
     """
+    FileStorage class for serializing and deserializing objects to\
+          and from JSON files.
+
+    Attributes:
+        __filename (str): Name of the file to save the objects.
+        __obj (dict): Dictionary to store objects in memory.
     """
 
     __filename = "FileStorage.json"
@@ -13,35 +21,48 @@ class file_storage:
 
     def print_all(self):
         """
+        Return all objects stored in memory.
+
+        Returns:
+            dict: Dictionary of all objects.
         """
-        return file_storage.__obj
+        return FileStorage.__obj
 
     def save(self):
         """
+        Serialize objects to a JSON file.
         """
         a_dict = {}
-        for key in file_storage.__obj:
-            a_dict[key] = file_storage.__obj[key].to_dict()
-        
-        with open(file_storage.__filename, 'w') as file:
+        for key in FileStorage.__obj:
+            a_dict[key] = FileStorage.__obj[key].to_dict()
+
+        with open(FileStorage.__filename, 'w') as file:
             json.dump(a_dict, file)
 
     def load(self):
         """
+        Deserialize objects from a JSON file.
         """
         try:
-            with open(file_storage.__filename, 'r') as f:
+            with open(FileStorage.__filename, 'r') as f:
                 a_dict = json.load(f)
             for key, value in a_dict.items():
-                file_storage.__obj[key] = eval(value['__class__'])(**value)
+                FileStorage.__obj[key] = eval(value['__class__'])(**value)
         except FileNotFoundError:
             pass
-    
-    def new(self, object):
-        """
-        """
-        key = object.__class__.__name__ + "." + object.id
-        file_storage.__obj[key] = object
 
-    def delete_obj(self):
-        file_storage.__obj.clear()
+    def new(self, obj):
+        """
+        Add a new object to the storage.
+
+        Args:
+            obj (object): The object to add.
+        """
+        key = obj.__class__.__name__ + "." + obj.id
+        FileStorage.__obj[key] = obj
+
+    def delete_all(self):
+        """
+        Delete all objects from the storage.
+        """
+        FileStorage.__obj.clear()

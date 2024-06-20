@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 
-import unittest, os, sys
+import unittest
+import os
+import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from models.user import User
@@ -17,6 +19,7 @@ class TestReview(unittest.TestCase):
         self.assertEqual(review.place, place)
         self.assertEqual(review.text, "Amazing place!")
         self.assertEqual(review.rating, 5)
+
 
 if __name__ == '__main__':
     unittest.main()
