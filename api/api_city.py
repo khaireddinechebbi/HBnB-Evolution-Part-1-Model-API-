@@ -6,7 +6,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from datetime import datetime
 import uuid
-from data_manager import DataManager
+from data.data_manager import DataManager
 from flask_restx import Namespace, Resource, fields, Api
 from flask import request, Flask
 
