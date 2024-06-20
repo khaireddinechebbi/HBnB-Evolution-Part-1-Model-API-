@@ -2,7 +2,7 @@
 """ Persistence for countries"""
 import os, sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from models.country import Country
+from model.country import Country
 from persistence.ipersistence_manager import IPersistenceManager
 
 
