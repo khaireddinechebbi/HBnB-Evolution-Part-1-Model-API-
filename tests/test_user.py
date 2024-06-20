@@ -4,7 +4,7 @@
 import unittest, os, sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from models.user import User
+from model.user import User
 
 class Test(unittest.TestCase):
     def test_creation(self):
