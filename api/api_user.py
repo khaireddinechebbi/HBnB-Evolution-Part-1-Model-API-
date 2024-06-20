@@ -1,14 +1,15 @@
 #!/usr/bin/python3
-# API for managing users
+"""API for managing users"""
+
+import os
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from datetime import datetime
 import uuid
 from data_manager import DataManager
 from flask_restx import Namespace, Resource, fields, Api
 from flask import request, Flask
-import os
-import sys
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 
 app = Flask(__name__)
