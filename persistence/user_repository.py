@@ -2,7 +2,7 @@
 """Persistence for users"""
 import os, sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from model.user import User
+from models.user import User
 from persistence.ipersistence_manager import IPersistenceManager
 
 

@@ -4,7 +4,7 @@ import os, sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 import uuid
-from model.amenity import Amenity
+from models.amenity import Amenity
 from persistence.ipersistence_manager import IPersistenceManager
 
 

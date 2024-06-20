@@ -3,8 +3,8 @@
 import unittest, os, sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from model.user import User
-from model.place import Place
+from models.user import User
+from models.place import Place
 
 class TestPlace(unittest.TestCase):
     def test_place_creation(self):

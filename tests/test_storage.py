@@ -7,13 +7,13 @@ from datetime import datetime
 
 
 from fileStorage.storage import *
-from model.base_model import baseModel
-from model.user import User
-from model.country import Country
-from model.city import City
-from model.amenity import Amenity
-from model.place import Place
-from model.review import Review
+from models.base_model import baseModel
+from models.user import User
+from models.country import Country
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
 
 
 class TestFileStorage(unittest.TestCase):

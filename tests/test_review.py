@@ -3,9 +3,9 @@
 import unittest, os, sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from model.user import User
-from model.place import Place
-from model.review import Review
+from models.user import User
+from models.place import Place
+from models.review import Review
 
 
 class TestReview(unittest.TestCase):
