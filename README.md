@@ -36,7 +36,7 @@ Key entities in our data model include Places, Users, Reviews, Amenities, Countr
 
 Here is a UML diagram representing the core entities and their relationships:
 
-<img src ="https://github.com/Erwan2072/holbertonschool-hbnb/blob/main/ulm%20modified%20test.png">
+<img src ="https://lucid.app/lucidchart/217ba56a-36c2-4ff4-8422-b21474c4f0c2/edit?invitationId=inv_c91ab3e7-ce80-4f3d-8b3f-e6449b16eff4&page=0_0#">
 
 **Entities**:
 
@@ -145,3 +145,5 @@ python3 -m unittest discover tests
 ### Contributing
 
 Bassem Krayem [Telegram](https://t.me/bassem_krayem)
+Salah Essioui [github](https://github.com/essioui/)
+khaireddine[mail](khaireddine.chebbi@live.fr)
