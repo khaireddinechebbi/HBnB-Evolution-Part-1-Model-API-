@@ -36,7 +36,7 @@ Key entities in our data model include Places, Users, Reviews, Amenities, Countr
 
 Here is a UML diagram representing the core entities and their relationships:
 
-<![diagram](https://lucid.app/lucidchart/217ba56a-36c2-4ff4-8422-b21474c4f0c2/edit?invitationId=inv_c91ab3e7-ce80-4f3d-8b3f-e6449b16eff4&page=0_0#)
+![diagram](https://lucid.app/lucidchart/217ba56a-36c2-4ff4-8422-b21474c4f0c2/edit?invitationId=inv_c91ab3e7-ce80-4f3d-8b3f-e6449b16eff4&page=0_0#)
 
 **Entities**:
 
